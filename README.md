@@ -1,6 +1,6 @@
 #### node - express 日志中间件
 
-##### 安装
+##### install
     npm install node-server-log --save
 
 ##### using:
