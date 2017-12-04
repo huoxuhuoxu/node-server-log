@@ -14,8 +14,10 @@
 
 ##### params:
 	
-	1.log("YYYY/mm/dd HH:MM:SS")
-	2.log({
+    params: exinclude, formdate
+
+	1.log({}, "YYYY/mm/dd HH:MM:SS")
+	2.log({}, {
 		format: "YYYY/mm/dd HH:MM:SS",
 		timeZone: 0
 	})

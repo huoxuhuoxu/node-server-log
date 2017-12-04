@@ -90,11 +90,18 @@ const formatDate = function (params){
 	return [generateFormat(seq, s), o.getTime()];
 };
 
-module.exports = function (params = {format: DEFAULT, timeZone: 0}){
+module.exports = function (exinclude = {}, params = {format: DEFAULT, timeZone: 0}){
 	return function(req, res, next){
 		let end = res.end;
 		let [s, t] = formatDate(params);
 		res.end = function(){
+
+			for(let name in exinclude){
+				if(name in req.body){
+					delete req.body[name];
+				}
+			}
+
 			let aResul = [
 				s,
 				`${new Date().getTime() - t}ms`,
